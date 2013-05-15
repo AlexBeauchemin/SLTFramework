@@ -1,0 +1,606 @@
+@import 'vars.less';
+body.mobile, html {
+  overflow: visible;
+	min-width: 0;
+}
+
+body.mobile{
+
+  background-image:url("@{imagePath}mobile/background-image.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  height:auto;
+  min-height:560px;
+
+  background-color:#e4cd71;
+  margin:0px;
+  padding:0px;
+  overflow-x: hidden;
+  width:100%;
+
+  #background_content_top{
+    background-image:none;
+    background-repeat:no-repeat;
+    background-size:cover;
+		margin: 0 auto;
+    width: 320px;
+
+  }
+
+  #background_content_bottom{
+    background-image:none;
+    background-repeat:no-repeat;
+    background-size:cover;
+  //margin-bottom:-10px;
+    color:#ecd176;
+    width:100%;
+    height:auto;
+    margin-bottom:0px;
+    padding-bottom:0px;
+  }
+
+  .content{
+    width:320px;
+    margin:0 auto;
+    background-image: none;
+  }
+
+  #header{
+    height:120px;
+    width:320px;
+
+    .logoSAQ{
+      display:none;
+    }
+
+    .menu_central{
+      width:320px;
+      padding:0px;
+      margin:0 auto 0 auto;
+
+      .logoCentral{
+        background-image: url("@{imagePath}mobile/header_logo.png");
+        width:148px;
+        height:117px;
+        margin:20px auto 0 86px;
+      }
+    }
+
+    .btn_langue{
+      position:absolute;
+      right:10px;
+      top:10px;
+    }
+  }
+
+  .contentFooter{
+    position:relative;
+    width:320px;
+    margin:0 auto 0 auto;
+    height:auto;
+    padding:0px;
+  }
+
+  #central{
+    width:320px;
+    float:left;
+  /*HOME*/
+
+
+    .wrapper_box{
+      width:320px;
+      float:left;
+      position:static;
+
+      .info_top{
+        background-image: url("@{imagePath}mobile/home/info_top.png");
+        width:281px;
+        height:107px;
+        position:static;
+        margin:10px auto 10px auto;
+      }
+
+      .btn_partager{
+        background-image: url("@{imagePath}mobile/home/btn_participer.png");
+        margin:0 auto 0 auto;
+        width:211px;
+        height:76px;
+        cursor:pointer;
+      }
+
+      .wrapper_price{
+        width:320px;
+        position:static;
+        float:left;
+        margin-top:5px;
+
+        .mob_ong1{
+          background-image: url("@{imagePath}mobile/home/onlget_1.png");
+          width:281px;
+          height:400px;
+          float:left;
+          margin:0 0 10px 20px;
+        }
+
+        .mob_ong2{
+          background-image: url("@{imagePath}mobile/home/onlget_2.png");
+          width:281px;
+          height:397px;
+          float:left;
+          margin:0 0 10px 20px;
+        }
+
+        .mob_ong3{
+          background-image: url("@{imagePath}mobile/home/onlget_3.png");
+          width:281px;
+          height:401px;
+          float:left;
+          margin:0 0 10px 20px;
+        }
+      }
+
+    }
+
+    .wrapper_rules{
+      background-image: url("@{imagePath}mobile/rules/bg_txt.png");
+      width:285px;
+      height:583px;
+      float:left;
+      margin:20px 0 10px 20px;
+
+      p{
+        font-family:'Arial';
+        color:#0c4043;
+        font-size:13px;
+        text-align: left;
+        width:260px;
+        margin-left:12px;
+      }
+
+      a{
+        color:#0c4043;
+      }
+
+      h1{
+        font-family:'newsgothicsbop-boldconregular';
+        color:#0c4043;
+        font-size:14px;
+        text-align: justify;
+        width:260px;
+        margin-left:12px;
+      }
+
+      .btnRetour{
+        background-image: url("@{imagePath}mobile/rules/btn_retour.png");
+        width:130px;
+        height:60px;
+        position:absolute;
+        top:650px;
+        right:5px;
+      }
+    }
+  }
+
+  #central_contest{
+  /*CONCOURS */
+    width:320px;
+    margin:10px 0 0 0;
+
+    .menu_contest{
+      display:none;
+    }
+
+    .box_contest{
+      width:320px;
+      height:976px;
+      float:left;
+      margin:0px;
+      position:static;
+      background-image: none;
+
+      .left_side{
+        display:none;
+      }
+
+      .left_side_form{
+        width:320px;
+        float:left;
+        margin-left:0px;
+
+        .title_left p{
+          text-align:center;
+          margin:20px auto 0 70px;
+        }
+
+        .onglet_voyage{
+          background-position: top;
+          cursor: pointer;
+          float:left;
+          height:181px;
+          margin:0px;
+          width:150px;
+
+          &.selected {
+            background-position: bottom;
+          }
+
+          &.voy1 {
+            background-image: url("@{imagePath}mobile/form/onglet_voy1.png");
+            margin:20px 0 0 20px
+          }
+
+          &.voy2 {
+            background-image: url("@{imagePath}mobile/form/onglet_voy2.png");
+            margin:20px 0 0 -20px
+          }
+
+          &.voy3 {
+            background-image: url("@{imagePath}mobile/form/onglet_voy3.png");
+            margin:-20px 0 0 80px;
+          }
+        }
+      }
+
+      .right_side{
+          display:none;
+      }
+
+      .right_side_form{
+        width:320px;
+        float:left;
+
+        .title_right p{
+
+          margin:20px auto 0 30px;
+          height:24px;
+          width:250px;
+          text-align:center;
+        }
+
+        .sousTitle{
+          float:left;
+          margin:35px 0 0 20px;
+        }
+
+        .sousTitle p{
+
+          width:6px;
+          float:left;
+        }
+
+        .sousTitle .msg{
+          width:280px;
+          float:left;
+          margin-bottom:10px;
+        }
+
+        #contestform_step3{
+          width:280px;
+          clear:both;
+          float:left;
+          margin:10px 0 5px 20px;
+
+          .wrapper_mGender{
+            width:280px;
+            height:35px;
+            float:left;
+          }
+
+          .step3_radioGender{
+            width:110px;
+            float:left;
+            margin-bottom:10px;
+
+            .radio_img_mGender{
+              background-image: url("@{imagePath}mobile/form/radioBtn.png");
+              background-repeat: no-repeat;
+              width:31px;
+              height:31px;
+              background-position:top;
+              float:left;
+            }
+
+            .radio_txt_mGender{
+              color:#666666;
+              font-family:'Arial';
+              font-size:13px;
+              float:left;
+              width:60px;
+              margin:10px 0 0 5px;
+            }
+
+          }
+
+          #radioBtn_Gender1{
+            .radio_img_mGender{
+              background-position:bottom;
+            }
+          }
+
+          .inputText{
+            clear:both;
+            width:273px;
+            float:left;
+            margin-bottom:5px;
+          }
+
+          .firstPart{
+            float:left;
+            width:20px;
+            height:30px;
+            background-color:#eceded;
+            margin-top:1px;
+          }
+
+          .firstPart p{
+            color:#e906a5;
+            font-family: 'Arial';
+            font-size:13px;
+            margin:10px 0 0 14px;
+          }
+
+          input{
+            float:left;
+            width:240px;
+            background-color:#eceded;
+            border:none;
+            height:24x;
+            color:#666666;
+            font-family:'Arial';
+            font-size:13px;
+            outline:none;
+            line-height:24px;
+            vertical-align: bottom;
+            -webkit-appearance: none;
+            margin-left:-1px;
+          }
+        }
+
+        .step3_radio{
+          clear:both;
+          margin:3px 0 0 20px;
+          height:20px;
+          cursor:pointer;
+        }
+
+        .radio_img{
+          background-image: url("@{imagePath}contest/step3_radio.png");
+          background-repeat: no-repeat;
+          width:19px;
+          height:19px;
+          background-position:top;
+          float:left;
+        }
+
+        .radio_txt{
+          color:#666666;
+          font-family:'Arial';
+          font-size:13px;
+          float:left;
+          width:270px;
+          margin:2px 0 0 10px;
+        }
+
+        .radio_txt a {
+          color:#666666;
+          text-decoration: underline;
+        }
+      }
+
+      .box_continuer{
+        background-image: none;
+        position:static;
+        float:left;
+        width:320px;
+        height:80px;
+
+        input[type="submit"] {
+          float:right;
+        }
+      }
+
+      .btn_continuer{
+        display:none;
+      }
+
+      .btn_soumettre{
+        background-image: url("@{imagePath}mobile/form/btn_soumettre.png");
+        background-position: top;
+        position:static;
+        float:left;
+        width:193px;
+        height:78px;
+        margin:20px 0 0 63px;
+        cursor:pointer;
+      }
+    }
+
+    .skip_form{
+      display:none;
+    }
+
+  }
+
+  .contest-card{
+    width: 320px;
+    margin: 20px auto 0 auto;
+    position:static;
+
+    .btn_download{
+      display:none;
+    }
+
+    .wrapperImg{
+      width:300px;
+      position:relative;
+      margin-left:20px;
+      height:420px;
+
+      .infoTop{
+        background-image: url("@{imagePath}mobile/cardPreview/info_top.png");
+        width:278px;
+        height:128px;
+        position:absolute;
+        top:0px;
+        left:0px;
+        z-index:4;
+      }
+
+      .myImg{
+        position:absolute;
+        width:285px;
+        height:285px;
+        left:0px;
+        top:110px;
+        z-index:3;
+      }
+
+      .btn_download{
+        display:none;
+      }
+
+      .btn_facebook{
+        background-image: url("@{imagePath}mobile/cardPreview/btn_partager.png");
+        width:130px;
+        height:60px;
+        position:absolute;
+        z-index:5;
+        left:165px;
+        top:220px;
+      }
+    }
+  }
+
+  #footer{
+    float:left;
+    padding:0px;
+    margin-top:55px;
+    width:320px;
+    height:108px;
+    background-image:url("@{imagePath}mobile/footer_logo.png");
+
+    .conteneur_logo{
+      width:320px;
+      margin:0 auto 0 auto;
+      height:auto;
+    }
+
+    .footer_link{
+      width:161px;
+      margin:50px auto 0 auto;
+      padding:0px;
+      a{
+        color:#004058;
+        font-family:"Arial";
+        font-size:14px;
+      }
+    }
+
+  }
+  &.en{
+
+    #header{
+      .menu_central{
+
+        .logoCentral{
+          background-image: url("@{imagePath}mobile/en_header_logo.png");
+          width:114px;
+          height:97px;
+          margin:20px auto 0 99px;
+        }
+      }
+    }
+
+    #central{
+
+      .wrapper_box{
+
+        .info_top{
+          background-image: url("@{imagePath}mobile/home/en_info_top.png");
+          width:279px;
+          height:106px;
+        }
+
+        .btn_partager{
+          background-image: url("@{imagePath}mobile/home/en_btn_participer.png");
+          width:211px;
+          height:77px;
+        }
+
+        .wrapper_price{
+
+          .mob_ong1{
+            background-image: url("@{imagePath}mobile/home/en_onlget_1.png");
+          }
+
+          .mob_ong2{
+            background-image: url("@{imagePath}mobile/home/en_onlget_2.png");
+          }
+
+          .mob_ong3{
+            background-image: url("@{imagePath}mobile/home/en_onlget_3.png");
+          }
+        }
+
+      }
+
+      .wrapper_rules{
+        .btnRetour{
+          background-image: url("@{imagePath}mobile/rules/en_btn_retour.png");
+        }
+      }
+    }
+
+    #central_contest{
+
+      .box_contest{
+
+        .left_side_form{
+
+          .onglet_voyage{
+
+            &.voy1 {
+              background-image: url("@{imagePath}mobile/form/en_onglet_voy1.png");
+            }
+
+            &.voy2 {
+              background-image: url("@{imagePath}mobile/form/en_onglet_voy2.png");
+            }
+
+            &.voy3 {
+              background-image: url("@{imagePath}mobile/form/en_onglet_voy3.png");
+            }
+          }
+        }
+        .btn_soumettre{
+          background-image: url("@{imagePath}mobile/form/en_btn_soumettre.png");
+          width:190px;
+          height:76px;
+          margin:20px 0 0 64px;
+        }
+      }
+
+    }
+
+    .contest-card{
+      .wrapperImg{
+
+        .infoTop{
+          background-image: url("@{imagePath}mobile/cardPreview/en_info_top.png");
+        }
+
+        .btn_facebook{
+          background-image: url("@{imagePath}mobile/cardPreview/en_btn_partager.png");
+        }
+      }
+    }
+
+    #footer{
+      background-image:url("@{imagePath}mobile/en_footer_logo.png");
+      .footer_link{
+        width:120px;
+        height:auto;
+      }
+    }
+  }
+}
