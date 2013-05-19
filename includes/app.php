@@ -93,13 +93,23 @@ class App
         $urlArray = explode( '/', $url );
         array_map('strtolower', $urlArray);
 
-        if ($urlArray[0] != 'fr' && $urlArray[0] != 'en') {
-            header('Location: ' . $this->base_url . '/' . $this->getConfig('default_lang') .'/' . $url);
-            die();
-        }
+        if($this->getConfig('multi_lang'))
+        {
+            //TODO: Allow more languages
+            if ($urlArray[0] != 'fr' && $urlArray[0] != 'en') {
+                header('Location: ' . $this->base_url . '/' . $this->getConfig('multi_lang_default') .'/' . $url);
+                die();
+            }
 
-        $urlArray = array_pad( $urlArray, 3, NULL );
-        list( $lang, $page, $action ) = $urlArray;
+            $urlArray = array_pad( $urlArray, 3, NULL );
+            list( $lang, $page, $action ) = $urlArray;
+        }
+        else
+        {
+            $urlArray = array_pad( $urlArray, 2, NULL );
+            list($page, $action ) = $urlArray;
+            $lang = false;
+        }
 
         $page = $this->getUrlParams($page);
         $action = $this->getUrlParams($action);
@@ -109,6 +119,7 @@ class App
         $this->lang = $lang;
         $this->page = $page;
         $this->action = $action;
+
     }
 
 
@@ -158,8 +169,11 @@ class App
     }
 
     private function getUrlParamsBetter($url) {
-        if(count($url)>3) {
-            $i = 3;
+        $max = 3;
+        if(!$this->getConfig('multi_lang'))
+            $max = 2;
+        if(count($url)>$max) {
+            $i = $max;
             while(isset($url[$i])) {
                 if(isset($url[$i+1]))
                     $this->urlParams[$url[$i]] = $url[$i+1];

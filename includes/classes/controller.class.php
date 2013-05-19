@@ -134,7 +134,6 @@ class Controller
     private function loadDicts()
     {
         //TODO: Load multiple dicts
-        //TODO: allow more than 2 language
         $files = glob(DOCROOT . '/includes/dicts/*.{php}', GLOB_BRACE);
         foreach ($files as $file) {
             include $file;
