@@ -5,4 +5,3 @@ var tracker = $.Tracker($('body'),{
 $(document).ready(function () {
 	tracker.trackPageView($('body').data('page'));
 });
-

@@ -76,7 +76,6 @@ var _gaq = _gaq || [];
 			};
 
 			this.trackPageView = function (page){
-				console.log(settings);
 				if(settings.account) {
 					_gaq.push(['_trackPageview', page]);
 				}
