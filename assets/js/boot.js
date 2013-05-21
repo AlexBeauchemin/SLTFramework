@@ -1,7 +1,8 @@
+// Avoid IE errors on console.log
+if (typeof console === "undefined")
+	console = { log: function () { } };
+
 (function(){
-
-
-
 	requirejs.config({
 		baseUrl: '/assets/js/',
 		paths: {

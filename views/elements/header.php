@@ -26,7 +26,7 @@
             ga_account: "<?php echo $this->app->getConfig('ga_account'); ?>",
             lang: "<?php echo $this->lang; ?>",
             page: "<?php echo $this->page; ?>"
-        }
+        };
     </script>
 </head>
 

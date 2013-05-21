@@ -20,7 +20,7 @@ $config = array(
     'app_url'            => 'https://apps.facebook.com/myapp/', //if facebook app is needed
 
     //Google analytics
-    'ga_account'         => '',
+    'ga_account'         => 'UA-29208382-30',
 
     //Contest autoclose
     'end_date'           => new DateTime('2013-05-23 00:00'),
@@ -28,7 +28,7 @@ $config = array(
 
     //Others
     'default_views'      => array('elements/header', 'currentPage', 'elements/footer'), //default views loaded for a page , currentPage is the name of the controller/view
-    'use_require'        => true, //use require.js
+    'use_require'        => false, //use require.js
     'env'                => 'dev',
     'url'                => 'http://framework.local/',
 

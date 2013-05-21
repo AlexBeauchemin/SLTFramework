@@ -1,21 +1,8 @@
-// Avoid IE errors on console.log
-if (typeof console === "undefined")
-	console = { log: function () { } };
-
-
-$(document).ready(function () {
-	ga_trackPage();
+var tracker = $.Tracker($('body'),{
+	'account': window.config.ga_account
 });
 
-
-
-function ga_trackPage(){
-	//Track page when ready
-	if (typeof trackPageView != 'undefined') {
-		trackPageView(window.config.page);
-	}
-	else {
-		setTimeout(ga_trackPage, 100);
-	}
-}
+$(document).ready(function () {
+	tracker.trackPageView($('body').data('page'));
+});
 

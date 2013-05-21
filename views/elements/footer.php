@@ -19,13 +19,13 @@
         }
         </script>
 
-         <script src="<?php echo $this->base_url; ?>/assets/js/lib/mootools-class.js"></script>
-         <script src="<?php echo $this->base_url; ?>/assets/js/lib/pluginMutator.js"></script>
+        <script src="<?php echo $this->base_url; ?>/assets/js/lib/mootools-core-1.4.5.js"></script>
+        <script src="<?php echo $this->base_url; ?>/assets/js/lib/Class.Mutators.jQuery.js"></script>
+        <script src="<?php echo $this->base_url; ?>/assets/js/src/Tracker.js"></script>
         <?php foreach($this->js_files as $file): ?>
             <script src="<?php echo $file; ?> "></script>
         <?php endforeach; ?>
-        <script src="<?php echo $this->base_url; ?>/assets/js/src/tracking.js"></script>
-        <script src="<?php echo $this->base_url; ?>/assets/js/src/app.js"></script>
+        <script src="<?php echo $this->base_url; ?>/assets/js/src/App.js"></script>
     <?php endif; ?>
 
 </body>

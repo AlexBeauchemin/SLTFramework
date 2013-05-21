@@ -73,7 +73,11 @@ Use Tracker.js (already included): [https://github.com/AlexBeauchemin/ga-simple-
 Use window.config defined in views/elements/header.php
 
 ## Configs
-In includes/config.php
+In includes/configs/
+Use the environement variables 'APPLICATION_ENV' to define your environments
+For example, if the environment variable is set to DEV , the file config-dev.php will be loaded instead , config-staging.php if the variable is set to STAGING
+If there is no file match, config.php will be loaded, ideally, use this file for prod environment only.
+You can use the url as an alternative to set the correct config values (commented example in config.php)
 
 ## Useful functions/variables
 - To access controller's functions/vars, use $this-> in your views
