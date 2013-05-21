@@ -1,0 +1,35 @@
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+$config = array(
+
+    //Database
+    'username'           => 'root',
+    'password'           => '',
+    'database'           => '',
+
+    //Multilang
+    'multi_lang'         => true,
+    'multi_lang_default' => 'fr', //need multi_lang to be true
+
+    //Facebook
+    'app_id'             => '',
+    'app_secret'         => '',
+    'app_url'            => 'https://apps.facebook.com/myapp/', //if facebook app is needed
+
+    //Google analytics
+    'ga_account'         => '',
+
+    //Contest autoclose
+    'end_date'           => new DateTime('2013-05-23 00:00'),
+    'end_view'           => 'close', //view loaded when the contest is closed
+
+    //Others
+    'default_views'      => array('elements/header', 'currentPage', 'elements/footer'), //default views loaded for a page , currentPage is the name of the controller/view
+    'use_require'        => true, //use require.js
+    'env'                => 'dev',
+    'url'                => 'http://framework.local/',
+
+);

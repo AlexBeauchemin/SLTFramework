@@ -1,9 +1,18 @@
 <?php
-header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
 
-/* Load includes */
+/* Static vars */
 define('DOCROOT', dirname(__FILE__));
-include DOCROOT . '/includes/config.php';
+define('ENVIRONMENT',strtolower(getenv('APPLICATION_ENV')));
+
+/* Load configs */
+if(ENVIRONMENT && file_exists(DOCROOT . '/includes/configs/config-' . ENVIRONMENT . '.php')) {
+    include DOCROOT . '/includes/configs/config-' . ENVIRONMENT . '.php';
+}
+else {
+    include DOCROOT . '/includes/configs/config.php';
+}
+
+/* Includes */
 include DOCROOT . '/includes/autoloader.php';
 include DOCROOT . '/includes/app.php';
 
