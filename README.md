@@ -48,6 +48,7 @@ $this->addJs(array(
   'lib/newfile.js'
 ));
 ```
+This function is useless if you use require (see Require.js section) as you need to define your dependencies with require
 
 ## Override views
 By default, the framework load these views :

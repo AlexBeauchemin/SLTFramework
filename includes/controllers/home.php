@@ -6,6 +6,6 @@ class HomeController extends Controller {
     }
 
     function deleteAction() {
-
+        //Example of action (/en/home/delete will automatically call this function)
     }
 }

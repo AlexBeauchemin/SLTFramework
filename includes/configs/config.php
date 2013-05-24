@@ -16,7 +16,7 @@ $config = array(
 
     //Multilang
     'multi_lang'         => true,
-    'multi_lang_default' => 'fr', //need multi_lang to be true
+    'multi_lang_default' => 'en', //need multi_lang to be true
 
     //Facebook
     'app_id'             => '',
@@ -27,12 +27,12 @@ $config = array(
     'ga_account'         => '',
 
     //Contest autoclose
-    'end_date'           => new DateTime('2013-05-23 00:00'),
+    'end_date'           => null, // new DateTime('2013-05-23 00:00'),
     'end_view'           => 'close', //view loaded when the contest is closed
 
     //Others
     'default_views'      => array('elements/header', 'currentPage', 'elements/footer'), //default views loaded for a page , currentPage is the name of the controller/view
-    'use_require'        => true, //use require.js
+    'use_require'        => false, //use require.js
     'env'                => 'prod',
     'url'                => 'http://framework.local/',
 

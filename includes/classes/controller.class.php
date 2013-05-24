@@ -126,7 +126,7 @@ class Controller
 
     public function isClosed()
     {
-        if (new DateTime('now') >= $this->app->getConfig('end_date'))
+        if ($this->app->getConfig('end_date') && new DateTime('now') >= $this->app->getConfig('end_date'))
             return true;
         return false;
     }

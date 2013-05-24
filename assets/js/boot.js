@@ -1,6 +1,6 @@
 // Avoid IE errors on console.log
 if (typeof console === "undefined")
-	console = { log: function () { } };
+	console = { log: function (msg) { } };
 
 (function(){
 	requirejs.config({
@@ -8,7 +8,10 @@ if (typeof console === "undefined")
 		paths: {
 			'lib': 'lib/',
 			'src': 'src/',
-			'jquery': 'lib/jquery-1.9.1.min',
+			'jquery': [
+				'//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min',
+				'lib/jquery-1.9.1.min'
+			],
 			'mootools': 'lib/mootools-core-1.4.5',
 			'class.mutators': 'lib/Class.Mutators.jQuery'
 			//'order': 'assets/js/lib/order',
@@ -16,10 +19,12 @@ if (typeof console === "undefined")
 		shim: {
 			'class.mutators': {
 				deps: [
-					//'jquery',
 					'mootools'
 				],
 				exports: 'classmutators'
+			},
+			'underscore': {
+					exports: '_'
 			}
 		},
 		waitSeconds: 15
