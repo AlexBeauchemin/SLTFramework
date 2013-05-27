@@ -80,6 +80,15 @@ For example, if the environment variable is set to DEV , the file config-dev.php
 If there is no file match, config.php will be loaded, ideally, use this file for prod environment only.
 You can use the url as an alternative to set the correct config values (commented example in config.php)
 
+## Validations
+Use
+```php
+$validate = new Validation();
+$email = $validate->is_email($email);
+```
+Will return the value or null if validation fails
+List of validations supported : is_email($value) , is_int($value) , is_numeric($value) , is_bool($value) , length($value,$min,$max)
+
 ## Useful functions/variables
 - To access controller's functions/vars, use $this-> in your views
 - To access application's functions/vars, use $this->app-> in your views

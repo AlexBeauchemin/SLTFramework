@@ -25,8 +25,6 @@ class App
             $this->page = "home";
         }
 
-        //TODO: Retrieve GET , POST and SESSION , combine data and use filter_input_array()
-
         if (!session_id()) {
             session_start();
         }
@@ -201,3 +199,4 @@ class App
 //TODO: Templating : Way to include views ( add twig? ) with a config to use it or not
 //TODO: Add composer ?
 //TODO: Handle case when the entire site is in a subfolder (www.mysite.com/contest/en/home/)
+//TODO: Retrieve GET , POST and SESSION , combine data and use filter_input_array() , Validation class , protect from xss
