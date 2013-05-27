@@ -13,7 +13,7 @@ else {
 }
 
 /* Includes */
-include DOCROOT . '/includes/autoloader.php';
+include DOCROOT . '/includes/lib/autoloader.php';
 include DOCROOT . '/includes/app.php';
 
 $app = new App();

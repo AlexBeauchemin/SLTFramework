@@ -1,7 +1,4 @@
 <?php
-/*
-    By Alex Beauchemin
-*/
 
 class Validation
 {

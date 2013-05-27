@@ -18,6 +18,9 @@ class App
 
         $this->setReporting();
 
+        $autoLoader = new AutoLoader();
+        $autoLoader->register();
+
         $this->base_url = $this->retrieveBaseUrl();
         $this->hook();
 
@@ -183,13 +186,6 @@ class App
     }
 
     private function setReporting() {
-        $environment = $this->getConfig('env');
-        $display = '0';
-        if($environment != 'prod')
-            $display = '1';
-
-        error_reporting(E_ALL);
-        ini_set('display_errors', $display);
         ini_set('log_errors', 'On');
     }
 
