@@ -87,6 +87,7 @@ $validate = new Validation();
 $email = $validate->is_email($email);
 ```
 Will return the value or null if validation fails
+
 List of validations supported : is_email($value) , is_int($value) , is_numeric($value) , is_bool($value) , length($value,$min,$max)
 
 ## Useful functions/variables
