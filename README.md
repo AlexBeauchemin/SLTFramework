@@ -83,10 +83,39 @@ You can use the url as an alternative to set the correct config values (commente
 ## Validations
 Use
 ```php
-$validate = new Validation();
-$email = $validate->is_email($email);
+$validation = new Validation();
+$email = $validation->is_email($email);
 ```
 Will return the value or null if validation fails
+
+Or you can do a batch validation that will return you an array with the id and the error message for each errors found. An empty array will be returned if everything is valid.
+The id and validation fields are required.
+```php
+$values = array(
+	array(
+		'id'         => 'txt_number1',
+		'validation' => 'is_int',
+		'value'      => 12,
+		'error'      => 'This number is not an integer.'
+	),
+	array(
+		'id'            => 'txt_name',
+		'validation'    => 'length',
+		'value'         => 'Alex',
+		'min'           => 3,
+		'max'           => 20,
+		'error'         => 'Your name must be between 3 and 20 characters.'
+	),
+	array(
+		'id'            => 'email',
+		'validation'    => 'is_email',
+		'value'         => 'myemail@test.com',
+		'error'         => 'Email invalid'
+	),
+);
+
+$errors = $validation->validate($values);
+```
 
 List of validations supported : is_email($value) , is_int($value) , is_numeric($value) , is_bool($value) , length($value,$min,$max)
 
