@@ -34,7 +34,8 @@ define([
 		init: function() {
 			var self = this;
 			self.tracker = $.Tracker(self.el,{
-				account: window.config.ga_account
+				account: window.config.ga_account,
+				domainName: window.config.ga_domain
 			});
 
 			self.bindEvents();
