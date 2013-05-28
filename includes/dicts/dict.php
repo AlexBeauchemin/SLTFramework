@@ -3,13 +3,13 @@
 $dict['en']['copy-example'] = 'This is an example of copy';
 $dict['fr']['copy-example'] = 'Ceci est un exemple de texte multilingue';
 
-$dict['en']['lang-switch'] = 'en';
-$dict['fr']['lang-switch'] = 'fr';
+$dict['en']['lang-switch'] = 'fr';
+$dict['fr']['lang-switch'] = 'en';
 
-$dict['en']['meta.title'] = 'Site title';
-$dict['fr']['meta.title'] = 'Titre du site';
-$dict['en']['meta.description'] = 'Description du site';
-$dict['fr']['meta.description'] = 'Site description';
+$dict['en']['meta.title'] = "Site title";
+$dict['fr']['meta.title'] = "Titre du site";
+$dict['en']['meta.description'] = "Description du site";
+$dict['fr']['meta.description'] = "Site description";
 
 $dict['en']['menu.contest'] = 'Contest';
 $dict['fr']['menu.contest'] = 'Concours';

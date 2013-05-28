@@ -25,6 +25,7 @@ $config = array(
 
     //Google analytics
     'ga_account'         => '',
+    'ga_domain'          => '',
 
     //Contest autoclose
     'end_date'           => null, // new DateTime('2013-05-23 00:00'),

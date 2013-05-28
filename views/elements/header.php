@@ -17,6 +17,7 @@
     <!--[if IE 8]>
         <link href="<?php echo $this->base_url; ?>/assets/css/ie8.css" rel="stylesheet" type="text/css" />
     <![endif]-->
+    <script type="text/javascript" src="/assets/js/lib/html5shiv.js"></script>
     <script>
         window.config = {
             app_id: "<?php echo $this->app->getConfig('app_id'); ?>",
@@ -24,6 +25,7 @@
             base_url: "<?php echo $this->base_url; ?>",
             env: "<?php echo $this->app->getConfig('env'); ?>",
             ga_account: "<?php echo $this->app->getConfig('ga_account'); ?>",
+            ga_domain: "<?php echo $this->app->getConfig('ga_domain'); ?>",
             lang: "<?php echo $this->lang; ?>",
             page: "<?php echo $this->page; ?>"
         };

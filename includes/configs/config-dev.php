@@ -20,7 +20,8 @@ $config = array(
     'app_url'            => 'https://apps.facebook.com/myapp/', //if facebook app is needed
 
     //Google analytics
-    'ga_account'         => 'UA-29208382-30',
+    'ga_account'         => '',
+    'ga_domain'          => '',
 
     //Contest autoclose
     'end_date'           => null, // new DateTime('2013-05-23 00:00')
