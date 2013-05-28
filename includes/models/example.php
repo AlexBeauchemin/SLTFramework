@@ -15,7 +15,7 @@ class ExampleModel extends Model
     {
         try {
             $preparedStatement = $this->db->prepare(
-                'INSERT INTO registrations (email) VALUES (:email)'
+                "INSERT INTO registrations (email) VALUES (:email)"
             );
 
             $preparedStatement->execute(
@@ -38,8 +38,8 @@ class ExampleModel extends Model
             array_push(
                 $errors,
                 array(
-                    'en' => 'Email invalid.',
-                    'fr' => 'Email invalide.'
+                    'en' => 'Invalid Email.',
+                    'fr' => 'Courriel invalide.'
                 )
             );
         }

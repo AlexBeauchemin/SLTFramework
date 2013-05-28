@@ -23,7 +23,8 @@ var _gaq = _gaq || [];
 	$.extend({
 		Tracker: function(el,options){
 			var settings = $.extend({
-				account: null
+				account: null,
+				domainName: null
 			}, options || {});
 
 			var self = this;
@@ -31,6 +32,8 @@ var _gaq = _gaq || [];
 			var initialize = function(){
 				if(settings.account) {
 					_gaq.push(['_setAccount', settings.account]);
+					if(settings.domainName != null && settings.domainName != '')
+						_gaq.push(['_setDomainName', settings.domainName]);
 
 					(function() {
 							var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
