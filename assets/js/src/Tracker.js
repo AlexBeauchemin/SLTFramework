@@ -1,20 +1,7 @@
 /*Tracking module
 By Alex Beauchemin
-
---- Track event ------
-<a href="/newpage" class="trackevent" data-tracking-category="your tracking category" data-tracking-action="your tracking action" data-tracking-label="your tracking label">Link</a>
-
---- Track pageview ---
-<a href="/" class="trackpageview" data-tracking-page="home">Link</a>
-
---- Javascript trackpageview ---
-var tracker = $.Tracker($('body'),{
-	account: window.config.ga_account
-});
-tracker.trackPageView('page');
-
+https://github.com/AlexBeauchemin/ga-simple-tracking
 */
-
 
 
 var _gaq = _gaq || [];
@@ -32,7 +19,7 @@ var _gaq = _gaq || [];
 			var initialize = function(){
 				if(settings.account) {
 					_gaq.push(['_setAccount', settings.account]);
-					if(settings.domainName != null && settings.domainName != '')
+					if(settings.domainName)
 						_gaq.push(['_setDomainName', settings.domainName]);
 
 					(function() {

@@ -196,3 +196,5 @@ class App
 //TODO: Add composer ?
 //TODO: Handle case when the entire site is in a subfolder (www.mysite.com/contest/en/home/)
 //TODO: Retrieve GET , POST and SESSION , combine data and use filter_input_array() , Validation class , protect from xss
+//TODO: Add flash messages
+//TODO: Add share module (facebook, twitter, g+...)
