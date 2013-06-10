@@ -17,6 +17,11 @@ if (typeof console === "undefined")
 			//'order': 'assets/js/lib/order',
 		},
 		shim: {
+            'src/app-require': {
+                deps: [
+                    'jquery'
+                ]
+            },
 			'class.mutators': {
 				deps: [
 					'mootools'
@@ -24,7 +29,7 @@ if (typeof console === "undefined")
 				exports: 'classmutators'
 			},
 			'underscore': {
-					exports: '_'
+                exports: '_'
 			}
 		},
 		waitSeconds: 15
