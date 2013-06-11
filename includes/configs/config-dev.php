@@ -9,6 +9,7 @@ $config = array(
     'username'           => 'root',
     'password'           => '',
     'database'           => '',
+    'host'               => 'localhost',
 
     //Multilang
     'multi_lang'         => true,

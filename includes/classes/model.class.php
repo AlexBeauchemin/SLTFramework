@@ -9,7 +9,7 @@ class Model {
     {
         $this->app = $app;
 
-        $host = 'localhost';
+        $host = $this->app->getConfig('host') || 'localhost';
         $user = $this->app->getConfig('username');
         $pass = $this->app->getConfig('password');
         $database = $this->app->getConfig('database');
