@@ -9,7 +9,9 @@ class Model {
     {
         $this->app = $app;
 
-        $host = $this->app->getConfig('host') || 'localhost';
+        //TODO: Put this in the app or in a database object, the database should not be initiated on every model created
+
+        $host = $this->app->getConfig('host');
         $user = $this->app->getConfig('username');
         $pass = $this->app->getConfig('password');
         $database = $this->app->getConfig('database');
