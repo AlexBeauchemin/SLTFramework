@@ -119,6 +119,12 @@ $errors = $validation->validate($values);
 
 List of validations supported : is_email($value) , is_int($value) , is_numeric($value) , is_bool($value) , length($value,$min,$max)
 
+## Security
+*To be completed
+- CSRF Class included
+- PDO usage for BD transactions
+- $this->output() to securly output data to the page (GET/POST params, data from database, or anything the user can modify...)
+
 ## Useful functions/variables
 - To access controller's functions/vars, use $this-> in your views
 - To access application's functions/vars, use $this->app-> in your views
