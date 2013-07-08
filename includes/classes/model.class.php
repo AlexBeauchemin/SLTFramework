@@ -18,7 +18,7 @@ class Model {
 
         $this->db = new PDO('mysql:dbname=' . $database . ';host=' .$host . ';charset=utf8', $user, $pass);
         $this->db->exec("SET CHARACTER SET utf8");
-        
+
         $this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

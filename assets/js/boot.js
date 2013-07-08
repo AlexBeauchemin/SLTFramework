@@ -17,7 +17,7 @@ if (typeof console === "undefined")
 			//'order': 'assets/js/lib/order',
 		},
 		shim: {
-            'src/app-require': {
+            'src/App-require': {
                 deps: [
                     'jquery'
                 ]
@@ -37,7 +37,7 @@ if (typeof console === "undefined")
 
 	requirejs([
 		'jquery',
-		'src/app-require'
+		'src/App-require'
 	], function($){
 		$(document).ready(function(){
 			var App = new $.App($('body'));
