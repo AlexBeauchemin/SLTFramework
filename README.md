@@ -125,6 +125,9 @@ List of validations supported : is_email($value) , is_int($value) , is_numeric($
 - PDO usage for BD transactions
 - $this->output() to securly output data to the page (GET/POST params, data from database, or anything the user can modify...)
 
+## Mobile / Tablet detection
+A class "mobile" or "tablet" is added to the body if such device is used. You can also use $this->app->getDevice() to retrieve the current user device. The function will output one of the 3 following : 'mobile', 'tablet', 'desktop' 
+
 ## Useful functions/variables
 - To access controller's functions/vars, use $this-> in your views
 - To access application's functions/vars, use $this->app-> in your views
