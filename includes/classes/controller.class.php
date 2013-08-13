@@ -34,7 +34,7 @@ class Controller
         $this->init();
         if($this->action && $this->action != 'default' && $this->action != 'init') {
             $action = 'action' . ucfirst($this->action);
-            $action();
+            $this->$action();
         }
         $this->render();
 
