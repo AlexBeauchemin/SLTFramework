@@ -89,38 +89,44 @@ class App
     private function hook()
     {
         $url = $_SERVER['REQUEST_URI'];
-        $url = trim( $url, '/' );//remove forward slash from beginning and end of $url
+        $url = trim($url, '/'); //remove forward slash from beginning and end of $url
 
-        $urlArray = explode( '/', $url );
+        $urlArray = explode('/', $url);
         array_map('strtolower', $urlArray);
 
-        if($this->getConfig('multi_lang'))
-        {
+        if ($this->getConfig('multi_lang')) {
             //TODO: Allow more languages
             if ($urlArray[0] != 'fr' && $urlArray[0] != 'en') {
-                header('Location: ' . $this->base_url . '/' . $this->getConfig('multi_lang_default') .'/' . $url);
+                header('Location: ' . $this->base_url . '/' . $this->getConfig('multi_lang_default') . '/' . $url);
                 die();
             }
 
-            $urlArray = array_pad( $urlArray, 3, NULL );
-            list( $lang, $page, $action ) = $urlArray;
-        }
-        else
-        {
-            $urlArray = array_pad( $urlArray, 2, NULL );
-            list($page, $action ) = $urlArray;
+            $urlArray = array_pad($urlArray, 3, null);
+            list($lang, $page, $action) = $urlArray;
+        } else {
+            $urlArray = array_pad($urlArray, 2, null);
+            list($page, $action) = $urlArray;
             $lang = false;
         }
 
-        $page = $this->getUrlParams($page);
+        $page   = $this->getUrlParams($page);
         $action = $this->getUrlParams($action);
 
         $this->getUrlParamsBetter($urlArray);
 
-        $this->lang = $lang;
-        $this->page = $page;
+        $this->lang   = $lang;
+        $this->page   = $page;
         $this->action = $action;
 
+    }
+
+    public function error_log($error)
+    {
+        $file = DOCROOT . "/log/errors.log";
+        if (!file_exists($file)) {
+            file_put_contents($file, '');
+        }
+        error_log($error, 3, $file);
     }
 
 
@@ -144,48 +150,53 @@ class App
         return $this->device;
     }
 
-    public function getUrl(){
+    public function getUrl()
+    {
         return $this->base_url . '/' . $this->lang . '/' . $this->page . '/' . $this->action . '/';
     }
 
-    private function getUrlParams($object) {
-        $param = strpos($object,'?');
-        if($param) {
-            $urlParams = substr($object,$param+1);
-            if($urlParams) {
-                $paramsArray = explode('&',$urlParams);
-                foreach($paramsArray as $item) {
-                    $item = explode('=',$item);
-                    if(count($item)==2) {
+    private function getUrlParams($object)
+    {
+        $param = strpos($object, '?');
+        if ($param) {
+            $urlParams = substr($object, $param + 1);
+            if ($urlParams) {
+                $paramsArray = explode('&', $urlParams);
+                foreach ($paramsArray as $item) {
+                    $item = explode('=', $item);
+                    if (count($item) == 2) {
                         $this->urlParams[$item[0]] = $item[1];
-                    }
-                    else {
+                    } else {
                         $this->urlParams[$item[0]] = '';
                     }
                 }
             }
-            $object = substr($object,0,$param);
+            $object = substr($object, 0, $param);
         }
         return $object;
     }
 
-    private function getUrlParamsBetter($url) {
+    private function getUrlParamsBetter($url)
+    {
         $max = 3;
-        if(!$this->getConfig('multi_lang'))
+        if (!$this->getConfig('multi_lang')) {
             $max = 2;
-        if(count($url)>$max) {
+        }
+        if (count($url) > $max) {
             $i = $max;
-            while(isset($url[$i])) {
-                if(isset($url[$i+1]))
-                    $this->urlParams[$url[$i]] = $url[$i+1];
-                else
+            while (isset($url[$i])) {
+                if (isset($url[$i + 1])) {
+                    $this->urlParams[$url[$i]] = $url[$i + 1];
+                } else {
                     $this->urlParams[$url[$i]] = '';
-                $i+=2;
+                }
+                $i += 2;
             }
         }
     }
 
-    private function setReporting() {
+    private function setReporting()
+    {
         ini_set('log_errors', 'On');
     }
 

@@ -142,5 +142,6 @@ A class "mobile" or "tablet" is added to the body if such device is used. You ca
 - **$this->getUrl()** : use this function to link to other pages of your application, it will keep the current language in the url. For example if you want to link to the page contest , use $this->getUrl('contest') instead of /contest in your link
 - **$this->output()** : secure output of information. Use this for everything that can be modified by the user (post data, get data , database data etc...)
 - **$this->switchLangLink()** : use this for the link of your language switcher element
+- **$this->app->error_log('This is an error')** : log custom errors to /log/errors.log
 
 
