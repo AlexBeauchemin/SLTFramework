@@ -11,6 +11,7 @@ To create a page: Add a php file in the view directory with the name of the page
 - Copy/Paste the code from /includes/controllers/example.php into your new file.
 - Change the name of the class "HomeController" with the name of your page with a capital letter and followed by "Controller" , so if you created contest.php , name your class ContestController
 - Do not use _ (underscores) in your names, use - (dashes) instead. So contest_end.php should be contest-end.php. In the class name , the dashes should be replaced by a capital letter, so if you want to create a page for yoursite.com/contest-end/ , create the view contest-end.php, the controller contest-end.php (optional) with the class name ContestEndController
+- To extend a controller (example : class MyController extends CommonController {} ), create a controller named common.php in the controller's folder.
 
 ## Create a model
 Use the same process as for the controller, put the file in /includes/models

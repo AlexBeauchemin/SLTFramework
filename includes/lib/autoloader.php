@@ -16,15 +16,16 @@ class AutoLoader {
         spl_autoload_register(array($this,'autoload'));
     }
 
-    private function autoload($className){
-        $className = strtolower($className);
+    private function autoload($originalClassName){
+        $className = strtolower($originalClassName);
         if(substr($className,-5,5) === "model" && strlen($className)!=5)
             $className = substr($className,0,strlen($className)-5);
 
         $files = array(
             $this->include_path . 'classes' . DIRECTORY_SEPARATOR . $className. '.class.php',
             $this->include_path . 'models' . DIRECTORY_SEPARATOR . $className. '.php',
-            $this->include_path . 'lib' . DIRECTORY_SEPARATOR . $className . DIRECTORY_SEPARATOR . $className. '.php'
+            $this->include_path . 'lib' . DIRECTORY_SEPARATOR . $className . DIRECTORY_SEPARATOR . $className. '.php',
+            $this->include_path . 'controllers' . DIRECTORY_SEPARATOR . str_replace('Controller','',$originalClassName) . '.php'
         );
 
         foreach ($files as $file) {
