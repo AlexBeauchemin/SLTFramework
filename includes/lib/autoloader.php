@@ -25,7 +25,7 @@ class AutoLoader {
             $this->include_path . 'classes' . DIRECTORY_SEPARATOR . $className. '.class.php',
             $this->include_path . 'models' . DIRECTORY_SEPARATOR . $className. '.php',
             $this->include_path . 'lib' . DIRECTORY_SEPARATOR . $className . DIRECTORY_SEPARATOR . $className. '.php',
-            $this->include_path . 'controllers' . DIRECTORY_SEPARATOR . str_replace('Controller','',$originalClassName) . '.php'
+            $this->include_path . 'controllers' . DIRECTORY_SEPARATOR . strtolower(str_replace('Controller','',$originalClassName)) . '.php'
         );
 
         foreach ($files as $file) {

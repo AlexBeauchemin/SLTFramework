@@ -126,7 +126,7 @@ class App
         if (!file_exists($file)) {
             file_put_contents($file, '');
         }
-        error_log($error, 3, $file);
+        error_log(Date("r") . ': ' . $error . "\n", 3, $file);
     }
 
 
@@ -206,6 +206,6 @@ class App
 //TODO: Templating : Way to include views ( add twig? ) with a config to use it or not
 //TODO: Add composer ?
 //TODO: Handle case when the entire site is in a subfolder (www.mysite.com/contest/en/home/)
-//TODO: Retrieve GET , POST and SESSION , combine data and use filter_input_array() , Validation class , protect from xss
+//TODO: Retrieve GET , POST and SESSION , combine data and use filter_input_array() , protect from xss
 //TODO: Add flash messages
 //TODO: Add share module (facebook, twitter, g+...)
