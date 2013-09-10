@@ -9,6 +9,7 @@ class App
         $base_url,
         $lang,
         $page,
+        $subfolder,
         $urlParams;
 
     function __construct()
@@ -94,18 +95,36 @@ class App
         $urlArray = explode('/', $url);
         array_map('strtolower', $urlArray);
 
-        if ($this->getConfig('multi_lang')) {
+        $startIndex = 0;
+        $baseUrl = trim($this->getConfig('url'),'/');
+        $baseUrl = explode( '/', $baseUrl );
+        if($baseUrl[count($baseUrl)-1] == $urlArray[0]) {
+            $this->subfolder = $urlArray[0];
+            $this->base_url .= '/' . $this->subfolder;
+            $startIndex = 1;
+        }
+
+        if($this->getConfig('multi_lang'))
+        {
             //TODO: Allow more languages
-            if ($urlArray[0] != 'fr' && $urlArray[0] != 'en') {
-                header('Location: ' . $this->base_url . '/' . $this->getConfig('multi_lang_default') . '/' . $url);
+            if ($urlArray[$startIndex] != 'fr' && $urlArray[$startIndex] != 'en') {
+                header('Location: ' . $this->base_url . '/' . $this->getConfig('multi_lang_default') .'/' . $url);
                 die();
             }
 
-            $urlArray = array_pad($urlArray, 3, null);
-            list($lang, $page, $action) = $urlArray;
-        } else {
-            $urlArray = array_pad($urlArray, 2, null);
-            list($page, $action) = $urlArray;
+            $urlArray = array_pad( $urlArray, 3+$startIndex, NULL );
+            if($this->subfolder)
+                list( $subfolder, $lang, $page, $action ) = $urlArray;
+            else
+                list( $lang, $page, $action ) = $urlArray;
+        }
+        else
+        {
+            $urlArray = array_pad( $urlArray, 2+$startIndex, NULL );
+            if($this->subfolder)
+                list($subfolder, $page, $action ) = $urlArray;
+            else
+                list($page, $action ) = $urlArray;
             $lang = false;
         }
 
@@ -181,6 +200,9 @@ class App
         $max = 3;
         if (!$this->getConfig('multi_lang')) {
             $max = 2;
+        }
+        if($this->subfolder) {
+            $max += 1;
         }
         if (count($url) > $max) {
             $i = $max;
